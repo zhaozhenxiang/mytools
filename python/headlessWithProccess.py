@@ -5,8 +5,8 @@ import random
 from multiprocessing import Process, Pool
 
 chrome_options = Options()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--disable-gpu')
+# chrome_options.add_argument('--headless')
+# chrome_options.add_argument('--disable-gpu')
 
 chrome_options.binary_location = r'C:\Users\zhaozhenxiang\AppData\Local\Google\Chrome\Application\chrome.exe'
 # chrome_options.binary_location = '/opt/google/chrome/chrome'
@@ -32,7 +32,8 @@ if __name__ == '__main__':
     pList = []
     for i in range(0, 4):
         print('create process:' + str(i))
-        p = Process(target=load, args=('http://192.168.100.165:85/', 100,))
+        # p = Process(target=load, args=('http://192.168.100.165:85/', 100,))
+        p = Process(target=load, args=('http://google.com', 1,))        
         p.daemon = True
         pList.append(p)
         p.start()
