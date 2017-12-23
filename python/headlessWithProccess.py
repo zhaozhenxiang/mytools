@@ -11,6 +11,9 @@ chrome_options = Options()
 chrome_options.binary_location = r'C:\Users\zhaozhenxiang\AppData\Local\Google\Chrome\Application\chrome.exe'
 # chrome_options.binary_location = '/opt/google/chrome/chrome'
 chrome_options.add_argument('user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3') 
+#设置代理
+#chromeOptions.add_argument('--proxy-server=http://ip:port')  
+#chromeOptions.add_argument('--proxy-server=socks5://ip:port')  
 def load(url, times):
     # time.sleep(2)
     # return
