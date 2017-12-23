@@ -18,7 +18,7 @@ chrome_options.binary_location = r'C:\Users\zhaozhenxiang\AppData\Local\Google\C
 
 opener = webdriver.Chrome(executable_path=r"C:\Python27\chromedriver.exe", chrome_options=chrome_options)
 
-opener.get("http://**/admin/login")
+opener.get("http://*/admin/login")
 
 u = opener.find_element_by_id("username")
 u.send_keys("cuisy")  
