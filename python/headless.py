@@ -10,6 +10,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 chrome_options = Options()
+prefs = {"profile.managed_default_content_settings.images": 2}
+chrome_options.add_experimental_option("prefs", prefs)
+chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
 
@@ -18,13 +21,13 @@ chrome_options.binary_location = r'C:\Users\zhaozhenxiang\AppData\Local\Google\C
 
 opener = webdriver.Chrome(executable_path=r"C:\Python27\chromedriver.exe", chrome_options=chrome_options)
 
-opener.get("http://smarthomeali.api.everyoo.com/admin/login")
+opener.get("http")
 
 u = opener.find_element_by_id("username")
-u.send_keys("cuisy")  
+u.send_keys("")  
 
 p = opener.find_element_by_id("password") 
-p.send_keys("123456")  
+p.send_keys("")  
 
 button = opener.find_element_by_id("btnSumit")
 button.click()

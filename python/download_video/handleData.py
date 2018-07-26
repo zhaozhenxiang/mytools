@@ -20,7 +20,9 @@ def loadMysqlData(limitCount):
         # 执行SQL语句
         cursor.execute(sql % (limitCount))
         # 获取所有记录列表
-        results = cursor.fetchall()    
+        results = cursor.fetchall()
+        if None == results:
+            results = []
     except:
         results = ()
         print ("Error: unable to fetch data")

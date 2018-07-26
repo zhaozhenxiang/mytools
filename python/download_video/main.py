@@ -276,6 +276,8 @@ def handle(onceLimit):
         #updateRows = [('2017-08-29 14:14:00', '2017-08-29 14:14:00', 1, 'asd', 'asd', 'asd', 1)]
         updateRows.append((startDownDate, doneDownDate, 1, downFileDir + filename, subTitlePath, videoMergeFile, item[0]))
     print('结束一次循环=========')
+    #2017-11-14 先不走递归
+    return  updateRows
     #判断递归
     if len(updateRows) == onceLimit:
         print('开始一次递归=========')
@@ -379,10 +381,10 @@ def mergeFile(videoPath, subPath):
 
 
 while 1:
-    handleResult = handle(10)
+    handleResult = handle(1)
     print('handle的返回值', handleResult)
     handleData.updateRows(handleResult)
-    time.sleep(300)
+    time.sleep(30)
     print('now date is' +  getCustomFormatDate())
 
 

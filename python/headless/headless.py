@@ -10,6 +10,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 chrome_options = Options()
+chrome_options.add_argument('--no-sandbox')
+prefs = {"profile.managed_default_content_settings.images": 2}
+chrome_options.add_experimental_option("prefs", prefs)
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--disable-gpu')
 
